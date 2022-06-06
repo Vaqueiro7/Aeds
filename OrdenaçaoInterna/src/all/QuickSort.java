@@ -19,7 +19,8 @@ public class QuickSort {
 	private int trocas; 
 	private int compQ; 
         private int[] ordenado;
-
+	
+	//Construtor
 	public QuickSort(int[] vetor, int n) {
 		
             //Método que irá ordenar o vetor com o algoritmo Quick Sort e calculará o tempo gasto em milisegundos
