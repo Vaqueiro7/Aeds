@@ -1,8 +1,7 @@
 package all;
 
 public class Tabela {
-
-	public static void imprimeResultados() {
+    public static void imprimeResultados() {
 		// criação de variáveis
 		int[] original = new int[30000];
 		int[] copiarOriginal = new int[20];
@@ -57,29 +56,29 @@ public class Tabela {
 
 		// Tabela com os resultados
 		System.out.println(
-				"\n           ORDENAÇÃO                                                               VETOR                                             ");
+				"\n                 ORDENAÇÃO                                                                                            VETOR                                                        ");
 		System.out.println(
-				"--------------------------------    -------------------------------------------------------------------------------------------------  ");
+				"---------------------------------------      ----------------------------------------------------------------------------------------------------------------------------------------------  ");
 		System.out.println(
-				"MÉTODO         TEMPO TOTAL (ms)         ACESSOS            COMPARAÇÕES            TROCAS             INSERÇÕES             PIVÔS       ");
+				"MÉTODO               TEMPO TOTAL (ms)                 ACESSOS                     COMPARAÇÕES                     TROCAS                       INSERÇÕES                       PIVÔS         ");
 		System.out.println(
-				"            5000   10000   30000    5000 10000 30000    5000 10000 30000     5000 10000 30000    5000 10000 30000    5000 10000 30000");
+				"               5000     10000    30000        5000     10000     30000       5000    10000    30000        5000   10000   30000         5000    10000    30000         5000    10000    30000");
 		System.out.println(
-				"---------   ----   -----   -----    ---- ----- -----    ---- ----- -----     ---- ----- -----    ---- ----- -----    ---- ----- ----- ");
+				"------------   ----     -----    -----        ----     -----     -----       ----    -----    -----        ----   -----   -----         ----    -----    -----         ----    -----    -----");
 
-		System.out.println("Insertion   " + i5k.gettempo() + " " + i10k.gettempo() + " " + i30k.gettempo() + "  "
-				+ i5k.getcontadorAI() + " " + i10k.getcontadorAI() + " " + i30k.getcontadorAI() + "  " + i5k.getcompI()
-				+ " " + i10k.getcompI() + " " + i30k.getcompI() + "                                         "
-				+ i5k.getcontadorInsI() + " " + i10k.getcontadorInsI() + " " + i30k.getcontadorInsI());
+		System.out.println("Insertion      " + i5k.gettempoI() + "   " + i10k.gettempoI() + "   " + i30k.gettempoI() + "       "
+				+ i5k.getcontadorAI() + "   " + i10k.getcontadorAI() + "   " + i30k.getcontadorAI() + "               " + i5k.getcompI()
+				+ "     " + i10k.getcompI() + "   " + i30k.getcompI() + "                                            "
+				+ i5k.getcontadorInsI() + "   " + i10k.getcontadorInsI() + "   " + i30k.getcontadorInsI());
 
-		System.out.println("Merge       " + m5k.gettempo() + " " + m10k.gettempo() + " " + m30k.gettempo() + "  "
-				+ m5k.getcontadorA() + " " + m10k.getcontadorA() + " " + m30k.getcontadorA() + "  " + m5k.getcompM()
-				+ " " + m10k.getcompM() + " " + m30k.getcompM());
+		System.out.println("Merge          " + m5k.gettempoM() + "   " + m10k.gettempoM() + "   " + m30k.gettempoM() + "      "
+				+ m5k.getcontadorA() + "    " + m10k.getcontadorA() + "    " + m30k.getcontadorA() + "      " + m5k.getcompM()
+				+ "    " + m10k.getcompM() + "    " + m30k.getcompM());
 
-		System.out.println("Quick       " + Q5k.gettempo() + " " + Q10k.gettempo() + " " + Q30k.gettempo() + "  "
-				+ Q5k.getcontadorAQ() + " " + Q10k.getcontadorAQ() + " " + Q30k.getcontadorAQ() + "  " + Q5k.getcompQ()
-				+ " " + Q10k.getcompQ() + " " + Q30k.getcompQ() + "  " + Q5k.gettrocas() + " " + Q10k.gettrocas() + " "
-				+ Q30k.gettrocas() + "                       " + Q5k.getpivoQ() + " " + Q10k.getpivoQ() + " "
+		System.out.println("Quick          " + Q5k.gettempoQ() + "   " + Q10k.gettempoQ() + "   " + Q30k.gettempoQ() + "       "
+				+ Q5k.getcontadorAQ() + "   " + Q10k.getcontadorAQ() + "  " + Q30k.getcontadorAQ() + "       " + Q5k.getcompQ()
+				+ "   " + Q10k.getcompQ() + "   " + Q30k.getcompQ() + "       " + Q5k.gettrocas() + "   " + Q10k.gettrocas() + "   "
+				+ Q30k.gettrocas() + "                                       " + Q5k.getpivoQ() + "   " + Q10k.getpivoQ() + "   "
 				+ Q30k.getpivoQ());
 
 	}
