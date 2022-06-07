@@ -11,65 +11,73 @@
 package all;
 
 public class QuickSort {
-    
-    //atributos do algoritmo Quick Sort
-    private int pivoQ; 
-	private long tempo; 
-	private int contadorAQ; 
-	private int trocas; 
-	private int compQ; 
-        private int[] ordenado;
-	
-	//Construtor
+
+	// atributos do algoritmo Quick Sort
+	private int pivoQ;
+	private long tempo;
+	private int contadorAQ;
+	private int trocas;
+	private int compQ;
+	private int[] ordenado;
+
 	public QuickSort(int[] vetor, int n) {
-		
-            //Método que irá ordenar o vetor com o algoritmo Quick Sort e calculará o tempo gasto em milisegundos
-                System.out.println("\nOrdenação com o Quick Sort: " + n + " valores.");
-                this.ordenado = CriaVetor.copiarVetor(vetor, n);
+
+		// Método que irá ordenar o vetor com o algoritmo Quick Sort e calculará o tempo
+		// gasto em milisegundos
+		System.out.println("\nOrdenação com o Quick Sort: " + n + " valores.");
+		this.ordenado = CriaVetor.copiarVetor(vetor, n);
 		this.tempo = System.nanoTime();
-		this.Quicksort(ordenado,0, n - 1);
+		this.Quicksort(ordenado, 0, n - 1);
 		this.tempo = System.nanoTime() - this.tempo;
 
 	}
-        //Função para calcular o tempo gasto para a ordenação
-	public float gettempo() {
-            return this.tempo / (float) 1000000;
-	}
-        //Função para calcular o número de acessos do Quick Sort
-	public int getcontadorAQ() {
-            return this.contadorAQ;
-	}
-        //Função para calcular o número de pivôs selecionados entre os elementos do Quick Sort
-	public int getpivoQ() {
-            return this.pivoQ;
-	}
-        //Função para calcular o número de trocas entre os elementos do Quick Sort
-	public int gettrocas() {
-            return this.trocas;
-	}
-        //Função para calcular o número de Comparações do Quick Sort
-	public int getcompQ() {
-            return this.compQ;
-	}
-        //Função para pegar o vetor "ordenado", que será o vetor original ordenado
-        public int[] getOrdenado(){
-            return this.ordenado;
-        }
 
-        //Desenvolvimento do algoritmo
+	// Função para calcular o tempo gasto para a ordenação
+	public float gettempo() {
+		return this.tempo / (float) 1000000;
+	}
+
+	// Função para calcular o número de acessos do Quick Sort
+	public int getcontadorAQ() {
+		return this.contadorAQ;
+	}
+
+	// Função para calcular o número de pivôs selecionados entre os elementos do
+	// Quick Sort
+	public int getpivoQ() {
+		return this.pivoQ;
+	}
+
+	// Função para calcular o número de trocas entre os elementos do Quick Sort
+	public int gettrocas() {
+		return this.trocas;
+	}
+
+	// Função para calcular o número de Comparações do Quick Sort
+	public int getcompQ() {
+		return this.compQ;
+	}
+
+	// Função para pegar o vetor "ordenado", que será o vetor original ordenado
+	public int[] getOrdenado() {
+		return this.ordenado;
+	}
+
+	// Desenvolvimento do algoritmo
 	public void Quicksort(int[] vetor, int esq, int dir) {
 		if (esq < dir) {
-			int d = Divisao(vetor, esq, dir);
+			int d = ordenaQuickSort(vetor, esq, dir);
 			Quicksort(vetor, esq, d);
 			Quicksort(vetor, d + 1, dir);
 			this.compQ++;
 		}
 	}
-        
-        //função que calculará as divisões do vetor para ordenar de acordo com o algoritmo de maneira recursiva
-	public int Divisao(int[] vetor, int esq, int dir) {
+
+	// função que calculará as divisões do vetor para ordenar de acordo com o
+	// algoritmo de maneira recursiva
+	public int ordenaQuickSort(int[] vetor, int esq, int dir) {
 		int meio = (int) (esq + dir) / 2;
-		pivoQ ++;
+		pivoQ++;
 		int pivo = vetor[meio];
 		this.contadorAQ++;
 		int i = esq - 1;
@@ -79,11 +87,13 @@ public class QuickSort {
 				i++;
 				this.compQ++;
 			} while (vetor[i] < pivo);
+			pivoQ++;
 			this.contadorAQ++;
 			do {
 				j--;
 				this.compQ++;
 			} while (vetor[j] > pivo);
+			pivoQ++;
 			this.contadorAQ++;
 			this.compQ++;
 			if (i >= j) {
@@ -92,7 +102,7 @@ public class QuickSort {
 			}
 			int aux = vetor[i];
 			vetor[i] = vetor[j];
-			this.contadorAQ+=4;
+			this.contadorAQ += 4;
 			vetor[j] = aux;
 			this.trocas++;
 		}
